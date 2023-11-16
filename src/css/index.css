@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+:root {
+  --p0: #dbdbdb;
+  --p1: #f7f7f7;
+  --p2: #252523;
+  --p3: #3192d6;
+
+  --p4: #83c156;
+  --p5: #bd3d34;
+  --p6: #ffcc5c;
+  --p7: #646965;
+
+  --r1: #af272f;
+  --r2: #0085ad;
+  --r3: #4c8c2b;
+  --r4: #eaaa00;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+	user-select: none;
+	margin: 0;
+	padding: 0;
+	background-color: #111;
+	font-family: 'Russo One', sans-serif;
+}
+
+#screen {
+	position: absolute;
+	width: 1280px;
+	height: 720px;
+	overflow: hidden;
+	/*xxxxxxxxxxxx*/
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+}
+
+#content-left{
+	position: absolute;
+	left: 0px;
+	height: 100%;
+	width: 300px;
+	background-color: var(--p0);
+	background-image: url("../../img/backgrounds/texture11.png");
+	box-shadow: inset -1px 1px 1px black, inset 1px -1px 1px black;
+}
+
+#separator-left {
+	position: absolute;
+	width: 5px;
+	height: 100%;
+	left: 300px;
+	background-color: var(--p1);
+	z-index: 99;
+	border-right: 1px solid black;
+	box-shadow: 0 0 3px white;
+	animation: labFlashC 4s infinite;
+}
+
+#separator-right {
+	position: absolute;
+	width: 5px;
+	height: 100%;
+	right: 300px;
+	background-color: var(--p1);
+	z-index: 99;
+	border-left: 1px solid black;
+	box-shadow: 0 0 3px white;
+	animation: labFlashC 4s infinite;
+}
+
+@keyframes labFlashA {
+	50% {box-shadow: inset 1px 1px 1px black, inset -1px -1px 1px black, inset 0 0 5px white, 0 0 5px white;}
+}
+@keyframes labFlashB {
+	50% {box-shadow: inset 1px 1px 1px black, inset -1px -1px 1px black, 0 1px 1px black, inset 0 0 5px white, 0 0 5px white;}
+}
+@keyframes labFlashC {
+	50% {box-shadow: 0 0 7px white}
+}
+@keyframes labFlashD {
+	50% {box-shadow: inset -1px 0 1px black, inset 0 0 5px white, 0 0 5px white;}
+}
+@keyframes labFlashE {
+	50% {box-shadow: inset 1px 1px 1px black, inset -1px -1px 1px black, inset 0 1px 5px white, 0 -1px 5px white;}
+}
+
+
+#content-right{
+	position: absolute;
+	right: 0px;
+	height: 100%;
+	width: 300px;
+	background-color: #333;
+}
+
+#content-center{
+	position: absolute;
+	left: 305px;
+	height: 100%;
+	width: 670px;
+	background-color: #444;
+}
+
+.white {color: white;}
+.whiter {color: white;}
+.red {color: #AD343E;}
+.blue {color: #3273a8;}
+.green {color: #597d1a;}
+.yellow {color: #ffcc5c;}/*cc9b16*/
+.pink {color: #d11151;}
+.orange {color: #c4570e;}
+.cyan {color: #0cafcc;}
+.purple {color: #7f23cf;}
+
+.pow {color: #d9534f;}
+.spd {color: #5bc0de;}
+.hp {color: #83c156;}
+.fat {color: #f9f9f9;}
+
+#black-bg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.8);
+	cursor: default;
+	z-index: 99;
+}
+
+#change-name-window{
+	position: absolute;
+	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+	width: 400px;
+	height: 140px;
+	background-color: var(--p2);
+	border: 5px solid var(--p1);
+	border-radius: 10px;
+	outline: 1px solid black;
+	box-shadow: inset 1px 1px 1px black, inset -1px -1px 1px black, inset 0 0 3px white, 0 0 3px white;
+}
+
+#change-name-window-label {
+	position: absolute;
+	top: 15px;
+	width: 100%;
+	text-align: center;
+	font-size: 22px;
+	color: var(--p1);
+	text-shadow: 0 0 2px black, 0 0 2px black;
+}
+
+#change-name-window-input{
+	position: absolute;
+	top: 60px;
+	font-size: 20px;
+	text-align: center;
+	width: 70%;
+	height: 25px;
+	left: 15%;
+	border-radius: 5px;
+	background-color: var(--p1);
+	color: var(--p2);
+	font-family: 'Russo One', sans-serif;
+}
+
+#change-name-window-input::placeholder {
+	opacity: 0.5;
+	color: var(--p2);
+	font-family: 'Russo One', sans-serif;
+}
+
+#change-name-window-button {
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	text-align: center;
+	font-size: 22px;
+	color: var(--p5);
+	text-shadow: 0 0 2px black, 0 0 2px black;
+	cursor: pointer;
+	transition: .3s;
+}
+
+#change-name-window-button:hover {
+	color: var(--p4);
+}
+
+/*debugger*/
+
+.debugger-button {
+	position: absolute;
+	z-index: 99;
+	height: 22px;
+	width: 60px;
+	color: white;
+
+	right: 10px;
+	background-color: #666;
+	border-radius: 5px;
+	text-shadow: 0 0 2px black;
+	cursor: pointer;
+	text-align: center;
+	transition: 0.3s;
+	line-height: 24px;
+}
+/*
+#debugger-gold {
+	bottom: 5px;	
+}
+
+#debugger-gems {
+	bottom: 30px;
+}
+
+#debugger-cookies {
+	bottom: 55px;
+}
+
+#debugger-gold:hover, #debugger-gems:hover, #debugger-cookies:hover {
+	background-color: #AD343E;
+}*/
