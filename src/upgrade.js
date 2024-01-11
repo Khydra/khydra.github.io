@@ -89,6 +89,8 @@ function getUpgrade(upgrd) {
 		break;
 		case 7: player.lineTurn[0].damage += upgrd.value;
 		break;
+		case 8: player.perfect.damage += upgrd.value;
+		break;
 	}
 }
 

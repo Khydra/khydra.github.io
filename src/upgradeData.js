@@ -264,25 +264,25 @@ const upgrade = {
 		},
 		1: {
 			name: ["REMATE",""],
-			descp: ["Aumenta en 5 todo el daño realizado el primer turno de cada ronda."],
+			descp: ["Causa 5 de daño después de realizar un prefecto."],
 			value: 5,
 			id: 8
 		},
 		2: {
 			name: ["REMATE",""],
-			descp: ["Aumenta en 7 todo el daño realizado el primer turno de cada ronda."],
+			descp: ["Causa 7 de daño después de realizar un prefecto."],
 			value: 7,
 			id: 8
 		},
 		3: {
 			name: ["REMATE",""],
-			descp: ["Aumenta en 10 todo el daño realizado el primer turno de cada ronda."],
+			descp: ["ACausa 8 de daño después de realizar un prefecto."],
 			value: 10,
 			id: 8
 		},
 		4: {
 			name: ["REMATE",""],
-			descp: ["Aumenta en 12 todo el daño realizado el primer turno de cada ronda."],
+			descp: ["ACausa 12 de daño después de realizar un prefecto."],
 			value: 12,
 			id: 8
 		},
