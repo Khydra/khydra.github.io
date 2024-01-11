@@ -50,7 +50,7 @@ function upgradeSelect(upgrd) {
 
 function upgradeRoll() {
 	for (let i=0; i<3; i++) {
-		let option = Math.floor(Math.random() * 8);
+		let option = Math.floor(Math.random() * 9);
 		let tier = tierRoll();
 		upgradeOption[i] = upgrade[option][tier];
 		_upgradeOptionName[i].innerHTML = upgradeOption[i].name[leng];

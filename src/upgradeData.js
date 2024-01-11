@@ -255,7 +255,7 @@ const upgrade = {
 			id: 7
 		},
 	},
-	7: {
+	8: {
 		0: {
 			name: ["REMATE",""],
 			descp: ["Causa 3 de daño después de realizar un prefecto."],

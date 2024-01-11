@@ -80,7 +80,7 @@ function changeHealth(value, unit) {
 function setEnemy() {
 	enemy.hp[1] = Math.floor(enemy.hp[1]*1.17);
 	enemy.hp[0] = enemy.hp[1];
-	if (round%3==0) enemy.red+=1;
+	if (stage%3==0) {enemy.red+=1;}
 	_unitHeatlhBarActual[1].style.width = `100%`;
 	_unitHeatlhBarNumber[1].innerHTML = `${enemy.hp[0]} / ${enemy.hp[1]}`;
 }
