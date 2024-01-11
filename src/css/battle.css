@@ -1,0 +1,17 @@
+#round-text{
+	position: absolute;
+	bottom: 170px;
+	left: 250px;
+	font-size: 24px;
+	color: white;
+	text-shadow: 2px 2px black;
+}
+
+#stage-text{
+	position: absolute;
+	bottom: 170px;
+	right: 250px;
+	font-size: 24px;
+	color: white;
+	text-shadow: 2px 2px black;
+}
