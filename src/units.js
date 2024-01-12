@@ -83,4 +83,33 @@ function setEnemy() {
 	if (stage%3==0) {enemy.red+=1;}
 	_unitHeatlhBarActual[1].style.width = `100%`;
 	_unitHeatlhBarNumber[1].innerHTML = `${enemy.hp[0]} / ${enemy.hp[1]}`;
+
+}
+
+var statsUnits = [];
+
+for (let i=0;i<2;i++) {
+	statsUnits[i] = document.createElement('div');
+	statsUnits[i].className = "stat-unit";
+}
+
+_playerContainer.appendChild(statsUnits[0]);
+_enemyContainer.appendChild(statsUnits[1]);
+
+function showStats() {
+	statsUnits[0].innerHTML = `
+		HP Max: ${player.hp[1]}<br>
+		Regen/Mapa: ${player.regenStage}<br>
+		Regen/Ronda: ${player.regenRound + player.damage}<br>
+		Daño verde: ${player.greenDamage + player.damage}<br>
+		Daño amarillo: ${player.yellowDamage}<br>
+		Cura en perfecto: ${player.perfect.heal}<br>
+		Daño en perfecto: ${player.perfect.damage}<br>
+		Daño extra inicio ronda: ${player.lineTurn[0].damage}<br>
+	`
+
+	statsUnits[1].innerHTML = `
+		HP Max: ${enemy.hp[1]}<br>
+		Daño: ${enemy.red}
+	`
 }

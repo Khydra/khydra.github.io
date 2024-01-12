@@ -123,7 +123,7 @@ function checkGuess() {
 				soundIncorrect.load();
 				soundIncorrect.play();
 
-				changeHealth(-enemy.red, player);
+				if (enemy.hp[0]>0) changeHealth(-enemy.red, player);
 				_casillasArray[actualLine][index].style.backgroundColor = "#733";
 				_casillasArray[actualLine][index].style.borderColor = "#925c5c";
 				_unidadesArray[p-1].style.backgroundColor = "#733";

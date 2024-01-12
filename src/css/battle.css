@@ -15,3 +15,11 @@
 	color: white;
 	text-shadow: 2px 2px black;
 }
+
+.stat-unit {
+	position: absolute;
+	top: 140px;
+	left: 25px;
+	color: white;
+	text-shadow: 2px 2px black;
+}

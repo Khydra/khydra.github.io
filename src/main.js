@@ -85,6 +85,7 @@ function continueGame() {
 	stats = JSON.parse(window.localStorage.getItem("stats"));
 	colors = JSON.parse(window.localStorage.getItem("colors"));
 
+	showStats();
 	loadGuesses();
 	perfect = false;
 	_roundText.innerHTML = `${text.battle.round[leng]} ${round}`;
@@ -101,6 +102,7 @@ function nextRound() {
 	pause = false;
 	resetMap();
 	healRound();
+	showStats();
 }
 
 function nextStage() {
