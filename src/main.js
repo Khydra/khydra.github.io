@@ -3,13 +3,17 @@ _screen = document.getElementById('screen');
 _gameScene = document.createElement('div');
 _gameScene.id = "game-scene";
 
-_tablero = document.createElement('div');
-_tablero.id = "tablero";
-_unidadesContenedor = document.createElement('div');
-_unidadesContenedor.id = "unidades-contenedor";
+_board = document.createElement('div');
+_board.id = "board";
+_gameScene.appendChild(_board)
 
-_gameScene.appendChild(_tablero)
-_gameScene.appendChild(_unidadesContenedor);
+_bottomBar = document.createElement('div');
+_bottomBar.id = "bottom-bar";
+_gameScene.appendChild(_bottomBar)
+
+_unitsContainer = document.createElement('div');
+_unitsContainer.id = "units-container";
+_bottomBar.appendChild(_unitsContainer);
 
 _gameReturnButton = document.createElement('div');
 _gameReturnButton.id = "game-return-button";
@@ -29,13 +33,14 @@ _gameReturnButton.addEventListener('click',()=>{
 
 _roundText = document.createElement('div');
 _roundText.id = "round-text";
-_gameScene.appendChild(_roundText);
+_bottomBar.appendChild(_roundText);
 
 _stageText = document.createElement('div');
 _stageText.id = "stage-text";
-_gameScene.appendChild(_stageText);
+_bottomBar.appendChild(_stageText);
 
-var numbers = [1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21,22];
+var numbers = [1,2,3,4,5,6,7,8,9,10,13,14,15,16,17,18,19,20,21,22];
+//var numbers = [0,1,2,3,4,5,6,7,8,9,12,13,14,15,16,17,18,19,20,21];
 
 var stage = 1;
 var round = 0;
@@ -45,30 +50,36 @@ var pause = false;
 var stats = [0,0,0];
 var colors = [0,0,0,0];
 
+var perfect = false;
+var actualSlot = 0;
+var actualLine = 0;
+var guess = []
+var prevGuess = [[],[],[],[],[],[]];
+
 function newGame() {
 	window.localStorage.setItem("gameActive", true);
 	deleteActualGame();
 	clean();
-	defaultUnits();
+	defaultPlayers();
 	stage = 1;
 	round = 0;
 	pause = false;
  	colors = [0,0,0,0];
  	stats = [0,0,0];
-	resetMap();
+	//resetMap();
 	nextRound();
 }
 
 function continueGame() {
-	player = JSON.parse(window.localStorage.getItem("player"));
+	user = JSON.parse(window.localStorage.getItem("user"));
 	enemy = JSON.parse(window.localStorage.getItem("enemy"));
-	unitsArray = [player,enemy];
+	playersArray = [user,enemy];
 
-	unitsArray.forEach((unit,index)=>{
+	playersArray.forEach((unit,index)=>{
 		let per = (100 * unit.hp[0]) / unit.hp[1];
 		_unitHeatlhBarActual[unit.id].style.width = `${per}%`;
 		_unitHeatlhBarNumber[unit.id].innerHTML = `${unit.hp[0]} / ${unit.hp[1]}`;
-		_unitHeatlhBarNumber[index].innerHTML = `${unitsArray[index].hp[0]} / ${unitsArray[index].hp[1]}`;
+		_unitHeatlhBarNumber[index].innerHTML = `${playersArray[index].hp[0]} / ${playersArray[index].hp[1]}`;
 	});
 
 	solution = JSON.parse(window.localStorage.getItem("solution"));
@@ -136,11 +147,20 @@ function createSolution(array) {
   	let numCopy = [...array];
   	let sol = [];
 
-  	for(let i=0; i<5; i++) {
+  	for (let i=0; i<1; i++) {
+   	 	let randNum = Math.floor(Math.random()*4)+(enemy.element*5);
+    	let splicedItem = numCopy.splice(randNum, 1)[0];
+    	sol.push(splicedItem);
+  	}
+  	console.log(sol)
+  	for (let i=0; i<4; i++) {
    	 	let randNum = Math.floor(Math.random()*numCopy.length);
     	let splicedItem = numCopy.splice(randNum, 1)[0];
     	sol.push(splicedItem);
   	}
+  	console.log(sol)
+  	shuffle(sol)
+  	console.log(sol)
   	return sol;
 }
 
@@ -154,7 +174,7 @@ _resultContinue.id = "result-continue";
 
 const _resultSolution = document.createElement('div');
 _resultSolution.id = "result-solution";
-_resultSolution.className = "linea";
+_resultSolution.className = "line";
 const _resultSolutionCasillas = [];
 
 for (let i=0; i<5; i++) {
@@ -267,7 +287,7 @@ function saveRecordData() {
 function saveActualGame() {
 	window.localStorage.setItem("gameSaved", true);
 
-	window.localStorage.setItem("player", JSON.stringify(player));
+	window.localStorage.setItem("user", JSON.stringify(user));
 	window.localStorage.setItem("enemy", JSON.stringify(enemy));
 
 	window.localStorage.setItem("solution", JSON.stringify(solution));
@@ -289,7 +309,7 @@ function saveActualGame() {
 function deleteActualGame() {
 	window.localStorage.setItem("gameSaved", false);
 
-	localStorage.removeItem(player);
+	localStorage.removeItem(user);
 	localStorage.removeItem(enemy);
 	localStorage.removeItem(solution);
 
@@ -304,5 +324,17 @@ function deleteActualGame() {
 
 	localStorage.removeItem(stats);
 	localStorage.removeItem(colors);
+}
+
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  while (currentIndex > 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
 }
 

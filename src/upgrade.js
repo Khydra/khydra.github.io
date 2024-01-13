@@ -72,24 +72,24 @@ function tierRoll() {
 function getUpgrade(upgrd) {
 	switch(upgrd.id) {
 		case 0: 
-			player.hp[1] += upgrd.value;
-			changeHealth(upgrd.value,player);
+			user.hp[1] += upgrd.value;
+			changeHealth(upgrd.value,user);
 		break;
-		case 1: player.regenRound += upgrd.value;
+		case 1: user.regenRound += upgrd.value;
 		break;
-		case 2: player.regenStage += upgrd.value;
+		case 2: user.regenStage += upgrd.value;
 		break;
-		case 3: player.perfect.heal += upgrd.value;
+		case 3: user.perfect.heal += upgrd.value;
 		break;
-		case 4: player.damage += upgrd.value;
+		case 4: user.damage += upgrd.value;
 		break;
-		case 5: player.greenDamage += upgrd.value;
+		case 5: user.greenDamage += upgrd.value;
 		break;
-		case 6: player.yellowDamage += upgrd.value;
+		case 6: user.yellowDamage += upgrd.value;
 		break;
-		case 7: player.lineTurn[0].damage += upgrd.value;
+		case 7: user.lineTurn[0].damage += upgrd.value;
 		break;
-		case 8: player.perfect.damage += upgrd.value;
+		case 8: user.perfect.damage += upgrd.value;
 		break;
 	}
 }
@@ -123,30 +123,34 @@ const tierColor = {
 }
 
 function healRound() {
-	if (player.regenRound==0) return;
-	changeHealth(player.regenRound, player);
+	if (user.regenRound==0) return;
+	changeHealth(user.regenRound, user);
 }
 
 function healStage() {
-	if (player.regenStage==0) return;
-	changeHealth(player.regenStage, player);
+	if (user.regenStage==0) return;
+	changeHealth(user.regenStage, user);
 }
 
-function damageYellow() {
-	let dmg = player.damage + player.yellowDamage;
-	if (player.lineTurn[0].damage>0 && actualLine==0) dmg += player.lineTurn[0].damage;
-	changeHealth(-dmg, enemy);
-}
+function damage(color, u) {
+	let dmg = user.damage;
 
-function damageGreen() {
-	let dmg = player.damage + player.greenDamage;
-	if (player.lineTurn[0].damage>0 && actualLine==0) dmg += player.lineTurn[0].damage;
+	if (color == "yellow") dmg += user.yellowDamage;
+	else if(color == "green") dmg += user.greenDamage;
+
+	if (user.lineTurn[0].damage>0 && actualLine==0) dmg += user.lineTurn[0].damage;
+
+	if (unit[u].element==0 && enemy.element == 3) dmg*=2;
+	else if (unit[u].element==1 && enemy.element == 0) dmg*=2;
+	else if (unit[u].element==2 && enemy.element == 1) dmg*=2;
+	else if (unit[u].element==3 && enemy.element == 2) dmg*=2;
+
 	changeHealth(-dmg, enemy);
 }
 
 function perfectTrigger() {
 	//heal
-	if (player.perfect.heal>0) changeHealth(player.perfect.heal, player);
+	if (user.perfect.heal>0) changeHealth(user.perfect.heal, user);
 	//damage
-	if (player.perfect.damage>0) changeHealth(player.perfect.damage, enemy);
+	if (user.perfect.damage>0) changeHealth(user.perfect.damage, enemy);
 }

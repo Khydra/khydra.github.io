@@ -1,8 +1,13 @@
-#settings-return{
+#settings-return {
 	position: absolute;
 	bottom: 100px;
 	left: 50%;
 	transform: translate(-50%);
+}
+
+#settings-return:hover{
+	color: #de1d57;
+    transform: translate(-50%) scale(1.05);
 }
 
 .settings-option, .settings-value, .setting-arrow {
@@ -12,6 +17,7 @@
     text-shadow: 4px 4px black;
     text-align: center;
 }
+
 .settings-value{width: 150px}
 
 #lenguage-option {

@@ -14,6 +14,13 @@ const text = {
 	battle: {
 		round: ["RONDA","ROUND"],
 		stage: ["NIVEL","STAGE"],
+		element: {
+			0: ["FUEGO","FIRE"],
+			1: ["AGUA","WATER"],
+			2: ["RAYO","THUNDER"],
+			3: ["TIERRA","EARTH"],
+			4: ["LUZ","LIGHT"],
+		}
 	},
 	result: {
 		defeat: ["DERROTA", "DEFEAT"],
