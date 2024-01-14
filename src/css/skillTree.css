@@ -1,0 +1,32 @@
+#st-tittle {
+	position: absolute;
+    top: 60px;
+    width: 100%;
+    font-size: 64px;
+    color: white;
+    text-align: center;
+    text-shadow: 7px 5px black;
+    letter-spacing: 2px;
+}
+
+#st-return {
+    position: absolute;
+    bottom: 40px;
+    left: 50px;
+    width: 150px;
+}
+
+#st-return:hover{
+    color: #de1d57;
+    padding-left: 0px;
+}
+
+#st-coin {
+     position: absolute;
+    bottom: 20px;
+    right: 40px;
+    font-size: 18px;
+    color: white;
+    text-shadow: 2px 2px black;
+    letter-spacing: 2px;
+}
