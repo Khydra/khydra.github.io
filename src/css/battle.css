@@ -274,7 +274,7 @@
 	height: 190px;
 	text-shadow: 2px 2px black;
 	background-color: #222;
-		z-index: 4;
+	z-index: 4;
 }
 
 .stat-player {
@@ -339,20 +339,40 @@
 
 .hb {
 	position: absolute;
-	bottom: 270px;
+	bottom: 260px;
 	left: 50%;
 	transform: translate(-50%);
 	width: 320px;
 	height: 50px;
 	background: var(--pink);
 	overflow: hidden;
+	background-color: #e44a78;
+	background: repeating-linear-gradient( -45deg, #de1d57, #de1d57 10.5px, #e44a78 10.5px, #e44a78 22.5px );
+	animation: hb-scroll 10s infinite linear, hb-float 2s infinite linear;
 }
+
+@keyframes hb-scroll {
+	100% {
+		background-position-x: 100px;
+	}
+}
+
+@keyframes hb-float {
+	40% {transform: translate(-50%) rotate(1deg);}
+	50% {
+		bottom: 245px;
+
+	}
+	60% {transform: translate(-50%) rotate(-2deg);}
+}
+
 
 .hb-actual {
 	height: 100%;
 	width: 100%;
-	background: var(--green);
+	background: linear-gradient(90deg, rgba(135,223,28,1) 15%, rgba(115,187,27,1) 68%);
 	transition: .3s;
+	box-shadow: 0 0 4px black;
 }
 
 .hb-number {
@@ -369,16 +389,20 @@
 .player-image{
 	position: absolute;
 	left: 50%;
-	bottom: 15px;
+	bottom: 80px;
 	width: 264px;
 	height: 264px;
-	transform: translate(-50%);
-	background-size: 100%;
-	background-image: url("../../img/player.png");
-		z-index: 4;
+	transform: translate(-50%) scale(1.5);
+	/*background-image: url("../../img/p7_1.png");*/
+	z-index: 4;
+	animation: sprite .6s steps(4) infinite;
 }
 
-#enemy-image{transform: translate(-50%) scaleX(-1);}
+@keyframes sprite {
+	100% {background-position: 1024px}
+}
+
+#enemy-image{transform: translate(-50%) scaleX(-1.5) scaleY(1.5);}
 
 #floor {
 	position: absolute;

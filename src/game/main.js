@@ -61,6 +61,9 @@ function continueGame() {
 	_stageText.innerHTML = `${text.battle.stage[leng]} ${stage}`;
 	changeStatsTab(statsTab);
 	enemyStatsTab();
+
+	_playerImage.style.backgroundImage = `url('./img/p${user.img}_1.png')`;
+	_enemyImage.style.backgroundImage = `url('./img/p${enemy.img}_1.png')`;
 	if(JSON.parse(window.localStorage.getItem("freezePreventing"))==true) acceptUnit();
 }
 

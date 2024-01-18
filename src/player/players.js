@@ -38,13 +38,15 @@ function defaultPlayers() {
 		growth: [0, 0],
 		block: [0, 1],
 		resurrection: [0, 1],
+		img: 7
 	};
 	userApplyUpgrades();
 	enemy = {
 		id: 1,
 		hp: [15,15],
 		red: 1,
-		element: Math.floor(Math.random()*4)
+		element: Math.floor(Math.random()*4),
+		img: Math.floor(Math.random()*20)
 	};
 	playersArray = [user,enemy];
 	playersArray.forEach((unit,index)=> {
@@ -52,6 +54,9 @@ function defaultPlayers() {
 		_unitHeatlhBarNumber[unit.id].innerHTML = `${unit.hp[0]} / ${unit.hp[1]}`;
 		_unitHeatlhBarNumber[index].innerHTML = `${playersArray[index].hp[0]} / ${playersArray[index].hp[1]}`;
 	});
+
+	_playerImage.style.backgroundImage = `url('./img/p${user.img}_1.png')`;
+	_enemyImage.style.backgroundImage = `url('./img/p${enemy.img}_1.png')`;
 }
 
 function changeHealth(value, unit) {
@@ -67,9 +72,11 @@ function setEnemy() {
 	enemy.hp[1] = Math.floor(enemy.hp[1]*1.17);
 	enemy.hp[0] = enemy.hp[1];
 	enemy.element = Math.floor(Math.random()*4);
+	enemy.img = Math.floor(Math.random()*20)
 	if (stage%3==0) {enemy.red+=1;}
 	_unitHeatlhBarActual[1].style.width = `100%`;
 	_unitHeatlhBarNumber[1].innerHTML = `${enemy.hp[0]} / ${enemy.hp[1]}`;
+	_enemyImage.style.backgroundImage = `url('./img/p${enemy.img}_1.png')`
 }
 
 function changeStatsTab(id) {
