@@ -139,10 +139,11 @@ function showResults() {
 }
 
 function coinReward() {
-	coins += Math.ceil(stats[0]*1.7);
-	coins += Math.ceil(stats[1]*0.3);
-	coins += Math.ceil(stats[2]*5);
-	_resultCoins.innerHTML = `${stats[0]} ${text.skill.coin[leng]} ${text.result.obtain[leng]}`;
+	let rewardCoins = Math.ceil(stats[0]*1.7);
+	rewardCoins += Math.ceil(stats[1]*0.3);
+	rewardCoins += Math.ceil(stats[2]*5);
+	coins += rewardCoins;
+	_resultCoins.innerHTML = `${rewardCoins} ${text.skill.coin[leng]} ${text.result.obtain[leng]}`;
 	window.localStorage.setItem("coins", JSON.stringify(coins));
 }
 
