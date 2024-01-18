@@ -46,7 +46,7 @@ function defaultPlayers() {
 		hp: [15,15],
 		red: 1,
 		element: Math.floor(Math.random()*4),
-		img: Math.floor(Math.random()*20)
+		img: Math.floor(Math.random()*20)+1;
 	};
 	playersArray = [user,enemy];
 	playersArray.forEach((unit,index)=> {
