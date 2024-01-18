@@ -162,25 +162,25 @@ const upgrade = {
 	5: {
 		0: {
 			name: ["PODER VERDE",""],
-			descp: ["Aumenta 2 el daño verde."],
+			descp: ["Aumenta 2 el daño correcto."],
 			value: 2,
 			id: 5
 		},
 		1: {
 			name: ["PODER VERDE",""],
-			descp: ["Aumenta 3 el daño verde."],
+			descp: ["Aumenta 3 el daño correcto."],
 			value: 3,
 			id: 5
 		},
 		2: {
 			name: ["PODER VERDE",""],
-			descp: ["Aumenta 5 el daño verde."],
+			descp: ["Aumenta 5 el daño correcto."],
 			value: 5,
 			id: 5
 		},
 		3: {
 			name: ["PODER VERDE",""],
-			descp: ["Aumenta 9 el daño verde."],
+			descp: ["Aumenta 9 el daño correcto."],
 			value: 9,
 			id: 5
 		},
@@ -194,31 +194,31 @@ const upgrade = {
 	6: {
 		0: {
 			name: ["PODER AMARILLO",""],
-			descp: ["Aumenta 1 el daño amarillo."],
+			descp: ["Aumenta 1 el daño parcial."],
 			value: 1,
 			id: 6
 		},
 		1: {
 			name: ["PODER AMARILLO",""],
-			descp: ["Aumenta 2 el daño amarillo."],
+			descp: ["Aumenta 2 el daño parcial."],
 			value: 2,
 			id: 6
 		},
 		2: {
 			name: ["PODER AMARILLO",""],
-			descp: ["Aumenta 3 el daño amarillo."],
+			descp: ["Aumenta 3 el daño parcial."],
 			value: 3,
 			id: 6
 		},
 		3: {
 			name: ["PODER AMARILLO",""],
-			descp: ["Aumenta 5 el daño amarillo."],
+			descp: ["Aumenta 5 el daño parcial."],
 			value: 5,
 			id: 6
 		},
 		4: {
 			name: ["PODER AMARILLO",""],
-			descp: ["Aumenta 6 el daño amarillo."],
+			descp: ["Aumenta 6 el daño parcial."],
 			value: 6,
 			id: 6
 		},
@@ -258,31 +258,31 @@ const upgrade = {
 	8: {
 		0: {
 			name: ["REMATE",""],
-			descp: ["Causa 3 de daño después de realizar un prefecto."],
+			descp: ["Causa 3 de daño después de realizar un perfecto."],
 			value: 3,
 			id: 8
 		},
 		1: {
 			name: ["REMATE",""],
-			descp: ["Causa 5 de daño después de realizar un prefecto."],
+			descp: ["Causa 5 de daño después de realizar un perfecto."],
 			value: 5,
 			id: 8
 		},
 		2: {
 			name: ["REMATE",""],
-			descp: ["Causa 7 de daño después de realizar un prefecto."],
+			descp: ["Causa 7 de daño después de realizar un perfecto."],
 			value: 7,
 			id: 8
 		},
 		3: {
 			name: ["REMATE",""],
-			descp: ["ACausa 8 de daño después de realizar un prefecto."],
+			descp: ["ACausa 8 de daño después de realizar un perfecto."],
 			value: 10,
 			id: 8
 		},
 		4: {
 			name: ["REMATE",""],
-			descp: ["ACausa 12 de daño después de realizar un prefecto."],
+			descp: ["ACausa 12 de daño después de realizar un perfecto."],
 			value: 12,
 			id: 8
 		},
