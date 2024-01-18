@@ -87,9 +87,9 @@ function getUpgrade(upgrd) {
 		break;
 		case 4: user.damage += upgrd.value;
 		break;
-		case 5: user.greenDamage += upgrd.value;
+		case 5: user.succes.damage += upgrd.value;
 		break;
-		case 6: user.yellowDamage += upgrd.value;
+		case 6: user.partial.damage += upgrd.value;
 		break;
 		case 7: user.lineTurn[0].damage += upgrd.value;
 		break;
