@@ -143,6 +143,7 @@ function coinReward() {
 
 function showSolution() {
 	for (let i=0; i<5; i++) {
+		_resultSolutionSquare[i].style.opacity = 1;
 		_resultSolutionSquare[i].style.backgroundImage = `url('./img/p${solution[i]}_1.png')`;
 		if (solution[i]===guess[i]) {
 			_resultSolutionSquare[i].style.backgroundColor = "#87DE1D";
