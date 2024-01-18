@@ -1,0 +1,71 @@
+#upgrade-window {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 800px;
+    height: 480px;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+}
+
+#upgrade-tittle {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--pink);
+    text-align: center;
+    text-shadow: 4px 4px black;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(20,20,20,1) 50%, rgba(0,0,0,0) 100%);
+}
+
+#upgrade-container {
+    position: absolute;
+    height: 340px;
+    top: 100px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-content: center;
+}
+
+.upgrade-option {
+    position: relative;
+    width: 200px;
+    height: 280px;
+    border-radius: 10px;
+    border: 3px solid;
+    border-top: 40px solid;
+    box-shadow: inset 0 0 2px black;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.upgrade-option:hover {
+    transform: translate(0, 10px);
+}
+
+.upgrade-name {
+    position: absolute;
+    top: -32px;
+    width: 100%;
+    text-align: center;
+    text-shadow: 2px 2px black;
+    color: white;
+    font-size: 20px;
+}
+
+.upgrade-descp {
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    left: 5%;
+    right: 5%;
+    text-align: center;
+    text-shadow: 2px 2px black;
+    color: white;
+}
