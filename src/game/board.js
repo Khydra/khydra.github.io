@@ -61,7 +61,6 @@ function checkGuess() {
 				if (solution[index]===p) {
 					soundCorrect.load();
 					soundCorrect.play();
-					if (user.perfect.heal>0) changeHealth(user.perfect.heal, user);
 					damage("succes",(p-1));
 					_squareArray[actualLine][index].style.opacity = 1;
 					_squareArray[actualLine][index].style.backgroundColor = "#87DE1D";
