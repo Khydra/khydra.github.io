@@ -1,0 +1,139 @@
+#st-tittle {
+	position: absolute;
+    top: 40px;
+    width: 100%;
+    font-size: 54px;
+    color: whitesmoke;
+    text-align: center;
+    text-shadow: 4px 4px black;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(20,20,20,0.6) 50%, rgba(0,0,0,0) 100%);
+}
+
+#st-coin {
+    position: absolute;
+    top: 140px;
+    right: 40px;
+    font-size: 18px;
+    color: var(--yellow);
+    text-shadow: 2px 2px black;
+    letter-spacing: 2px;
+}
+
+#st-background {
+    position: absolute;
+    top: 140px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 820px;
+    height: 520px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px 10px;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+#st-background::-webkit-scrollbar {
+    width: 10px;
+}
+
+#st-background::-webkit-scrollbar-track {
+    background: var(--grey);
+    border-radius: 5px;
+    box-shadow:inset   0 0 2px black;
+}
+
+#st-background::-webkit-scrollbar-thumb {
+    background: var(--pink);
+    outline: 1px solid #333;
+    border-radius: 15px;
+}
+
+.st-container {
+    position: relative;
+    background: #666;
+    background-image: url("../../img/bg2.png");
+
+    width: 250px;
+    height: 200px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: inset 1px 1px black, inset -1px -1px black,0 0 2px black;
+    outline: 2px solid #111;
+    border: 2px solid #444;
+}
+
+.st-name {
+    position: absolute;
+    top: 8px;
+    width: 100%;
+    text-shadow: 2px 2px black;
+    color: var(--blue);
+    font-weight: bold;
+    text-align: center;
+    font-size: 22px;
+    background: rgb(0,0,0,0.3);
+}
+
+.st-descp {
+    position: absolute;
+    top: 50px;
+    bottom: 70px;
+    left: 5px;
+    right: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-shadow: 1px 1px black;
+    color: whitesmoke;
+    text-align: center;
+    font-size: 15px;
+    background: rgb(0,0,0,0.5);
+    border-radius: 5px;
+}
+
+.st-level {
+    position: absolute;
+    bottom: 38px;
+    width: 100%;
+    text-shadow: 2px 2px black;
+    color: whitesmoke;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.st-button {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 30px;
+    background: #444;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 0 -1px 1px black;
+    text-shadow: 2px 2px black;
+    color: var(--yellow);
+    text-align: center;
+    line-height: 32px;
+}
+
+.st-button:hover {
+    filter: brightness(1.2);
+}
+
+#st-return {
+    position: absolute;
+    bottom: 40px;
+    left: -2px;
+    width: 180px;
+    padding-left: 50px;
+}
+
+#st-return:hover{
+    color: var(--pink);
+    padding-left: 70px;
+    width: 160px;
+    box-shadow: 2px 2px var(--pink);
+}

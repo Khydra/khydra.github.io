@@ -1,0 +1,97 @@
+#settings-tittle {
+	position: absolute;
+    top: 40px;
+    width: 100%;
+    font-size: 54px;
+    color: whitesmoke;
+    text-align: center;
+    text-shadow: 4px 4px black;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(20,20,20,0.6) 50%, rgba(0,0,0,0) 100%);
+}
+
+#settings-container {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 500px;
+    transform: translate(-50%,-50%);
+}
+
+.settings-option, .settings-value, .setting-arrow {
+	position: absolute;
+	font-size: 32px;
+    color: whitesmoke;
+    text-shadow: 2px 2px black;
+    text-align: center;
+}
+
+.settings-value{
+	width: 150px;
+	color: var(--green);
+}
+
+#lenguage-option {
+	top: 50px;
+	left: 50px;
+}
+
+#lenguage-value {
+	top: 50px;
+	right: 50px;
+}
+
+#volume-option {
+	top: 100px;
+	left: 50px;
+}
+
+#volume-value {
+	top: 100px;
+	right: 50px;
+}
+
+.setting-arrow {
+	cursor: pointer;
+	transition: .3s;
+	color: white;
+}
+
+.setting-arrow:hover {color: var(--pink);}
+
+#lengauge-arrow0 {
+	top: 50px;
+	right: 220px;
+}
+
+#lengauge-arrow1 {
+	top: 50px;
+	right: 0px;
+}
+
+#volume-arrow0 {
+	top: 100px;
+	right: 220px;
+}
+
+#volume-arrow1 {
+	top: 100px;
+	right: 0px;
+}
+
+#settings-return {
+	position: absolute;
+	bottom: 40px;
+	left: -2px;
+	width: 180px;
+	padding-left: 50px;
+}
+
+#settings-return:hover{
+	color: var(--pink);
+    padding-left: 70px;
+    width: 160px;
+    box-shadow: 2px 2px var(--pink);
+}
+
